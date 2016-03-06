@@ -17,7 +17,7 @@ public class GestionDonne {
 	public GestionDonne() throws ParseException, AtomeDejaAjouterException {
 		String line, fields[];
 		try {
-			BufferedReader reader = new BufferedReader(new FileReader("doc/tableauchimique.csv"));
+			BufferedReader reader = new BufferedReader(new FileReader("ressource/tableauchimique.csv"));
 			while ((line = reader.readLine()) != null) {
 				fields = line.split(";");
 				int numeroAtomique = Integer.parseInt(fields[3]);
