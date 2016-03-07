@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -42,6 +43,7 @@ public class FenetreChimie extends JFrame implements ActionListener{
 	private JLabel familleLabel;
 	private JLabel ionLabel = new JLabel();
 	private JLabel coucheElectroniqueLabel = new JLabel();
+	private JLabel masseAtomeLabel = new JLabel();
 	// Ajout des boutons
 	private JButton atomeBouton; // Bouton correspondant à l'atome
 	private JButton couleurFamilleBouton; // Bouton correspondant à la couleur de la famille
@@ -52,7 +54,7 @@ public class FenetreChimie extends JFrame implements ActionListener{
 	private JPanel panneau4 = new JPanel();
 	
 
-	public FenetreChimie() throws ParseException, AtomeDejaAjouterException {
+	public FenetreChimie() throws ParseException, AtomeDejaAjouterException,AtomeInexistantException {
 	
 		setTitle("Tableau Périodique De Mendeleiev");
 		setResizable(true);
@@ -77,7 +79,7 @@ public class FenetreChimie extends JFrame implements ActionListener{
 		panneauLegende.setLayout(new GridLayout(10,2));
 		panneauLegende.setLayout(null);
 		panneauLegende.setSize(210,200);
-		panneauLegende.setLocation(10,450);
+		panneauLegende.setLocation(1150,500);
 		panneauLegende.setBackground(Color.black);
 		
 		panneau4.setLayout(new GridLayout(3,1));
@@ -120,7 +122,7 @@ public class FenetreChimie extends JFrame implements ActionListener{
 			}
 			else if(tableChimique.atomes.get(i).getFamille().equals("Alcalin")){
 				atomeBouton.setBackground(Color.ORANGE);
-				atomeBouton.setFont(new Font ("Consolas",Font.BOLD,15));
+				atomeBouton.setFont(new Font ("Consolas",Font.BOLD,14));
 				atomeBouton.setForeground(Color.white);
 			
 			}
@@ -138,7 +140,7 @@ public class FenetreChimie extends JFrame implements ActionListener{
 			}
 			else if(tableChimique.atomes.get(i).getFamille().equals("Halogène")){
 				atomeBouton.setBackground(turquoise);
-				atomeBouton.setForeground(violet_red);
+				atomeBouton.setForeground(Color.BLACK);
 				atomeBouton.setFont(new Font ("Consolas",Font.BOLD,13));
 			}
 			else if(tableChimique.atomes.get(i).getFamille().equals("Post-transition metal")){
@@ -252,37 +254,47 @@ public class FenetreChimie extends JFrame implements ActionListener{
 	// Fenetre: Lorsque on séléctionne un atome donné
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		JFrame fenetre = new JFrame("Atome ");
+		JFrame fenetre = new JFrame("");
+		// Pour que l'utilisateur ne puisse pas agrandir la fenetre
 		fenetre.setResizable(false);
-		fenetre.setSize (400,400);
-		fenetre.setLocation (10, 10);
-	
+		fenetre.setSize (280,400);
+		fenetre.setLocation (1080, 80);
+		// Si on veut centrer la fenetre
+		//fenetre.setLocationRelativeTo(null); 
+		
+		fenetre.setVisible(true);
+		
 		for(int i=0; i<tableChimique.getCurrentAtomCount(); i++){
 			  if(e.getActionCommand() == tableChimique.atomes.get(i).getSymbole()){
 				  
+				  DecimalFormat df = new DecimalFormat("0.00");
 					  fenetre.setTitle("Illustration: " + tableChimique.atomes.get(i).getNom());
 					  titre2Label = new JLabel("<html><body><u>Information Générale de l'atome</u></body></html>",JLabel.CENTER);
-					  titre2Label.setFont (new Font ("Bank Gothic", Font.BOLD, 15));
+					  titre2Label.setFont (new Font ("Consolas", Font.BOLD, 15));
 					  titre2Label.setForeground(Color.red);
 					  nomLabel = new JLabel ("Nom: " + tableChimique.atomes.get(i).getNom());
 					  symboleLabel = new JLabel ("Symbole: [" + tableChimique.atomes.get(i).getSymbole()+"]");
 					  familleLabel = new JLabel("Famille: " + tableChimique.atomes.get(i).getFamille());
+					  masseAtomeLabel = new JLabel("<html><body>Masse: "+df.format(tableChimique.calculMasseAtome(tableChimique.atomes.get(i).getNom()))+" 10<sup>-27</sup> kg</body> </html>");
 					  nbrLiaisonLabel = new JLabel ("Nombre de liaisons: " + tableChimique.atomes.get(i).getNbrLiaison());
-					  masseMolaireLabel = new JLabel ("Masse molaire: " + tableChimique.atomes.get(i).getmasseMolaire()+"u");
+					  masseMolaireLabel = new JLabel ("<html><body>Masse molaire: " + df.format(tableChimique.atomes.get(i).getmasseMolaire())+" g.mol<sup>-1</sup></body></html>");
 					  periodeLabel = new JLabel ("Période: " + tableChimique.atomes.get(i).getPeriode());
 					  colonneLabel = new JLabel ("Colonne: " + tableChimique.atomes.get(i).getColonne());
 					  numeroAtomiqueLabel  = new JLabel ("Numéro atomique(Z):  " + tableChimique.atomes.get(i).getNumAtomiqueZ());
 					  ionLabel = new JLabel ("<html><body>Charge ionique: " + tableChimique.atomes.get(i).chargeIonique()+"</body></html>");
 					  coucheElectroniqueLabel = new JLabel ("Couche electronique: " + tableChimique.atomes.get(i).coucheExterne());
+					  
 			  }
 			  
 		}
 		JPanel panneau5 = new JPanel();
-		panneau5.setLayout(new GridLayout(11,1));
+		panneau5.setLayout(new GridLayout(12,1));
+		panneau5.setBackground(lightgreen);
 		panneau5.add(titre2Label);
 		panneau5.add(nomLabel);
 		panneau5.add(symboleLabel);
 		panneau5.add(familleLabel);
+		panneau5.add(masseAtomeLabel);
 		panneau5.add(nbrLiaisonLabel);
 		panneau5.add(masseMolaireLabel);
 		panneau5.add(periodeLabel);
@@ -290,14 +302,13 @@ public class FenetreChimie extends JFrame implements ActionListener{
 		panneau5.add(numeroAtomiqueLabel);
 		panneau5.add(ionLabel);
 		panneau5.add(coucheElectroniqueLabel);
-		// Centrer l'application
-		fenetre.setLocationRelativeTo(null); 
+		// Affichage du contenu
 		fenetre.setContentPane(panneau5);
-		fenetre.setVisible(true);
 		
 	}
 	
-	public static void main(String[] args) throws ParseException, AtomeDejaAjouterException {
+
+	public static void main(String[] args) throws ParseException, AtomeDejaAjouterException,AtomeInexistantException {
 		FenetreChimie GestionDonne = new FenetreChimie();
 		GestionDonne.setResizable(false);
 		GestionDonne.setVisible(true);

@@ -1,14 +1,10 @@
 package packchimique;
-//import org.apache.log4j.Logger;
-//import org.apache.log4j.BasicConfigurator;
-//import org.apache.log4j.NDC;
-
 	import java.text.ParseException;
 
 	public class  ModeConsole {
 
 
-		public static void main(String[] args) throws AtomeDejaAjouterException, ParseException {
+		public static void main(String[] args) throws AtomeDejaAjouterException,AtomeInexistantException, ParseException {
 			
 			GestionDonne tableElementChimique = new GestionDonne();
 		/*	System.out.println("\n### La Recherche Par Symbole: \"Ar\" ###\n");

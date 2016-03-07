@@ -14,7 +14,7 @@ import java.lang.Math;
 public class GestionDonne {
 	public ArrayList<Atome> atomes = new ArrayList<Atome>();
 	
-	public GestionDonne() throws ParseException, AtomeDejaAjouterException {
+	public GestionDonne() throws ParseException, AtomeDejaAjouterException,AtomeInexistantException {
 		String line, fields[];
 		try {
 			BufferedReader reader = new BufferedReader(new FileReader("ressource/baseDeDonnees.csv"));
@@ -23,8 +23,9 @@ public class GestionDonne {
 				int numeroAtomique = Integer.parseInt(fields[3]);
 				int nombreLiaison = Integer.parseInt(fields[7]);
 				NumberFormat format = NumberFormat.getInstance(Locale.getDefault());
-			    Number number = format.parse(fields[4]);	    
+			    Number number = format.parse(fields[4]);
 			    double masseMolaire = number.doubleValue();
+				
 				int periode = Integer.parseInt(fields[5]);
 				int colonne = Integer.parseInt(fields[6]);	
 				Atome atome = new Atome(fields[0],fields[1], fields[2], numeroAtomique, masseMolaire, periode, colonne,nombreLiaison);
@@ -135,7 +136,7 @@ public class GestionDonne {
 		return result;
 	}
 	// Ajout en fin liste
-	public void add(Atome atome) throws AtomeDejaAjouterException {
+	public void add(Atome atome) throws AtomeDejaAjouterException,AtomeInexistantException {
 		if (!atomes.contains(atome)) {
 			atomes.add(atome);
 		}
@@ -160,6 +161,24 @@ public class GestionDonne {
 		if (trouve == false) System.out.println("["+nom+"] n'existe pas dans la classification periodique\n Veuillez saisir un nom d'atome correcte"); 
 	}
 	
+	// Calculer la masse d'un atome
+	public double calculMasseAtome(String nom){
+		//matome = Z*mproton + (N)*mneutron mneutron1,67.10^-27 kg 
+		double mp=1.67;
+		double mAtome;
+		Iterator<Atome> iterator = atomes.iterator();
+		while (iterator.hasNext()) {
+			Atome atome = iterator.next();
+			if (atome.getNom().equals(nom) || atome.getSymbole().equals(nom)) {
+				int nbrProton = atome.getNumAtomiqueZ();
+				int nbrMasse = (int) Math.round(atome.getmasseMolaire());
+				int neutron = nbrMasse - nbrProton;
+				mAtome=(atome.getNumAtomiqueZ()+neutron)*mp;
+				return mAtome;
+			}
+		}
+		return -1;
+	}
 public void calculProton (String nom) {
 		
 		boolean trouve = false;

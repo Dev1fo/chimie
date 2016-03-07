@@ -69,6 +69,7 @@ public class Atome {
 		}
 		
 	}
+
 	public String coucheExterne(){
 		
 		
