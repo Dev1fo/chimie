@@ -8,16 +8,16 @@ public class Atome {
 	private int periode;
 	private int col;
 	private int numAtomiqueZ;
-	private double masseAtomique;
+	private double masseMolaire;
 	private int nbrLiaison;
 	
-	public Atome(String nom, String symbole, String famille, int numAtomiqueZ, double masseAtomique, int periode, int col,int nbrLiaison) {
+	public Atome(String nom, String symbole, String famille, int numAtomiqueZ, double masseMolaire, int periode, int col,int nbrLiaison) {
 		
 		this.nom = nom;
 		this.symbole = symbole;
 		this.famille = famille;
 		this.numAtomiqueZ = numAtomiqueZ;
-		this.masseAtomique = masseAtomique;
+		this.masseMolaire = masseMolaire;
 		this.periode = periode;
 		this.col = col;
 		this.nbrLiaison=nbrLiaison ;
@@ -44,8 +44,8 @@ public class Atome {
 		return numAtomiqueZ;
 	}
 	
-	public double getMasseAtomique() {
-		return masseAtomique;
+	public double getmasseMolaire() {
+		return masseMolaire;
 	}
 	
 	public int getPeriode() {
@@ -61,11 +61,11 @@ public class Atome {
 		switch (col){
 		
 		case 1: return symbole + "<sup>[+]</sup>";
-		case 15: return symbole + "<sup>" + nbrLiaison + "[-]</sup>";
-		case 16: return symbole + "<sup>" + nbrLiaison + "[-]</sup>";
+		case 15: return symbole + "<sup>[" + nbrLiaison + "-]</sup>";
+		case 16: return symbole + "<sup>[" + nbrLiaison + "-]</sup>";
 		case 17:return symbole + "<sup>[-]</sup>";
 		case 18:return famille;
-		default:return symbole + "<sup>" + nbrLiaison + "[+]</sup>";
+		default:return symbole + "<sup>[" + nbrLiaison + "+]</sup>";
 		}
 		
 	}
@@ -101,8 +101,8 @@ public class Atome {
 				return false;
 		} else if (!famille.equals(other.famille))
 			return false;
-		if (Double.doubleToLongBits(masseAtomique) != Double
-				.doubleToLongBits(other.masseAtomique))
+		if (Double.doubleToLongBits(masseMolaire) != Double
+				.doubleToLongBits(other.masseMolaire))
 			return false;
 		if (nom == null) {
 			if (other.nom != null)
@@ -127,7 +127,7 @@ public class Atome {
 		result = prime * result + col;
 		result = prime * result + ((famille == null) ? 0 : famille.hashCode());
 		long temp;
-		temp = Double.doubleToLongBits(masseAtomique);
+		temp = Double.doubleToLongBits(masseMolaire);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		result = prime * result + ((nom == null) ? 0 : nom.hashCode());
 		result = prime * result + numAtomiqueZ;
@@ -140,7 +140,7 @@ public class Atome {
 	public String toString() {
 		return "Nom Atome:[" + nom + "]|Symbole chimique:[" + symbole + "]|Famille:["
 				+ famille + "]|Numero Atomique:"
-				+ numAtomiqueZ + "|Masse Atomique:" + masseAtomique
+				+ numAtomiqueZ + "|Masse Atomique:" + masseMolaire
 				+ "|Periode:" + periode + "|Col:" + col +"|NbrLiaison:"+nbrLiaison+"";
 	}
 

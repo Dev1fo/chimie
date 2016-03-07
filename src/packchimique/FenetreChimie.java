@@ -36,7 +36,7 @@ public class FenetreChimie extends JFrame implements ActionListener{
 	private JLabel numeroAtomiqueLabel;
 	private JLabel nomLabel;
 	private JLabel nbrLiaisonLabel;
-	private JLabel masseAtomiqueLabel;
+	private JLabel masseMolaireLabel;
 	private JLabel periodeLabel;
 	private JLabel colonneLabel;
 	private JLabel familleLabel;
@@ -268,7 +268,7 @@ public class FenetreChimie extends JFrame implements ActionListener{
 					  symboleLabel = new JLabel ("Symbole: [" + tableChimique.atomes.get(i).getSymbole()+"]");
 					  familleLabel = new JLabel("Famille: " + tableChimique.atomes.get(i).getFamille());
 					  nbrLiaisonLabel = new JLabel ("Nombre de liaisons: " + tableChimique.atomes.get(i).getNbrLiaison());
-					  masseAtomiqueLabel = new JLabel ("Masse atomique: " + tableChimique.atomes.get(i).getMasseAtomique()+"u");
+					  masseMolaireLabel = new JLabel ("Masse molaire: " + tableChimique.atomes.get(i).getmasseMolaire()+"u");
 					  periodeLabel = new JLabel ("Période: " + tableChimique.atomes.get(i).getPeriode());
 					  colonneLabel = new JLabel ("Colonne: " + tableChimique.atomes.get(i).getColonne());
 					  numeroAtomiqueLabel  = new JLabel ("Numéro atomique(Z):  " + tableChimique.atomes.get(i).getNumAtomiqueZ());
@@ -284,7 +284,7 @@ public class FenetreChimie extends JFrame implements ActionListener{
 		panneau5.add(symboleLabel);
 		panneau5.add(familleLabel);
 		panneau5.add(nbrLiaisonLabel);
-		panneau5.add(masseAtomiqueLabel);
+		panneau5.add(masseMolaireLabel);
 		panneau5.add(periodeLabel);
 		panneau5.add(colonneLabel);
 		panneau5.add(numeroAtomiqueLabel);

@@ -22,12 +22,12 @@ public class GestionDonne {
 				fields = line.split(";");
 				int numeroAtomique = Integer.parseInt(fields[3]);
 				int nombreLiaison = Integer.parseInt(fields[7]);
-				NumberFormat format = NumberFormat.getInstance(Locale.FRANCE);
+				NumberFormat format = NumberFormat.getInstance(Locale.getDefault());
 			    Number number = format.parse(fields[4]);	    
-			    double masseAtomique = number.doubleValue();
+			    double masseMolaire = number.doubleValue();
 				int periode = Integer.parseInt(fields[5]);
 				int colonne = Integer.parseInt(fields[6]);	
-				Atome atome = new Atome(fields[0],fields[1], fields[2], numeroAtomique, masseAtomique, periode, colonne,nombreLiaison);
+				Atome atome = new Atome(fields[0],fields[1], fields[2], numeroAtomique, masseMolaire, periode, colonne,nombreLiaison);
 				add(atome);
 			}
 			reader.close();
@@ -40,6 +40,24 @@ public class GestionDonne {
 			System.err.println(e.getMessage());
 		}
 	}
+	// Couche KLMNOP avec les periode
+		public void coucheElectronique(String nom){
+			String couche;
+			
+					switch (gestionParPeriode(nom)){
+					
+					case 1: couche="La couche electronique du ["+nom+"] est: [K]";break;
+					case 2:	couche="La couche electronique du ["+nom+"] est: [K L]";break;
+					case 3:	couche="La couche electronique du ["+nom+"] est: [K L M]";break;
+					case 4:	couche="La couche electronique du ["+nom+"] est: [K L M N]";break;
+					case 5:	couche="La couche electronique du ["+nom+"] est: [K L M N O]";break;
+					case 6:	couche="La couche electronique du ["+nom+"] est: [K L M N O P]";break;
+					case 7:	couche="La couche electronique du ["+nom+"] est: [K L M N O P Q]";break;
+					default: couche="Invalide atome["+nom+"] n'existe pas dans la classification periodique\n Veuillez saisir un nom d'atome correcte";
+			        break;
+					}
+					 System.out.println(couche);
+				}
 
 	public void gestionParPeriode(int periode) { 
 		boolean trouve = false; 
@@ -166,7 +184,7 @@ public void calculProton (String nom) {
 			if (atome.getNom().equals(nom) || atome.getSymbole().equals(nom)) {
 				
 				int nbrProton = atome.getNumAtomiqueZ();
-				int nbrMasse = (int) Math.round(atome.getMasseAtomique());
+				int nbrMasse = (int) Math.round(atome.getmasseMolaire());
 				int result = nbrMasse - nbrProton;
 				System.out.println("Le [" + atome.getNom() + "]: " + result + " neutron(s).");
 				trouve = true;
@@ -174,22 +192,5 @@ public void calculProton (String nom) {
 		}
 		if (trouve == false) System.out.println("["+nom+"] n'existe pas dans la classification periodique\n Veuillez saisir un nom d'atome correcte"); 
 	}
-	// Couche KLMNOP avec les periode
-	public void coucheElectronique(String nom){
-		String couche;
-		
-				switch (gestionParPeriode(nom)){
-				
-				case 1: couche="La couche electronique du ["+nom+"] est: [K]";break;
-				case 2:	couche="La couche electronique du ["+nom+"] est: [K L]";break;
-				case 3:	couche="La couche electronique du ["+nom+"] est: [K L M]";break;
-				case 4:	couche="La couche electronique du ["+nom+"] est: [K L M N]";break;
-				case 5:	couche="La couche electronique du ["+nom+"] est: [K L M N O]";break;
-				case 6:	couche="La couche electronique du ["+nom+"] est: [K L M N O P]";break;
-				case 7:	couche="La couche electronique du ["+nom+"] est: [K L M N O P Q]";break;
-				default: couche="Invalide atome["+nom+"] n'existe pas dans la classification periodique\n Veuillez saisir un nom d'atome correcte";
-		        break;
-				}
-				 System.out.println(couche);
-			}
+	
 }
