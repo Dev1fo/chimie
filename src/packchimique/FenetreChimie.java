@@ -260,7 +260,7 @@ public class FenetreChimie extends JFrame implements ActionListener{
 		for(int i=0; i<tableChimique.getCurrentAtomCount(); i++){
 			  if(e.getActionCommand() == tableChimique.atomes.get(i).getSymbole()){
 				  
-					  fenetre.setTitle("Atome " + tableChimique.atomes.get(i).getNom());
+					  fenetre.setTitle("Illustration: " + tableChimique.atomes.get(i).getNom());
 					  titre2Label = new JLabel("<html><body><u>Information Générale de l'atome</u></body></html>",JLabel.CENTER);
 					  titre2Label.setFont (new Font ("Bank Gothic", Font.BOLD, 15));
 					  titre2Label.setForeground(Color.red);
