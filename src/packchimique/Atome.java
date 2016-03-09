@@ -61,10 +61,13 @@ public class Atome {
 		switch (col){
 		
 		case 1: return symbole + "<sup>[+]</sup>";
+		// Ions négatif colonne : 15, 16,17 : Anions
 		case 15: return symbole + "<sup>[" + nbrLiaison + "-]</sup>";
 		case 16: return symbole + "<sup>[" + nbrLiaison + "-]</sup>";
 		case 17:return symbole + "<sup>[-]</sup>";
+		// Pas d'ions pour les gaz nobles
 		case 18:return famille;
+		//Colonne 2 a 14 : Cations
 		default:return symbole + "<sup>[" + nbrLiaison + "+]</sup>";
 		}
 		
@@ -121,22 +124,7 @@ public class Atome {
 			return false;
 		return true;
 	}
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + col;
-		result = prime * result + ((famille == null) ? 0 : famille.hashCode());
-		long temp;
-		temp = Double.doubleToLongBits(masseMolaire);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		result = prime * result + ((nom == null) ? 0 : nom.hashCode());
-		result = prime * result + numAtomiqueZ;
-		result = prime * result + periode;
-		result = prime * result + ((symbole == null) ? 0 : symbole.hashCode());
-		return result;
-	}
-	
+
 	@Override
 	public String toString() {
 		return "Nom Atome:[" + nom + "]|Symbole chimique:[" + symbole + "]|Famille:["

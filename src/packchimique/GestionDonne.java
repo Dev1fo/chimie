@@ -61,16 +61,16 @@ public class GestionDonne {
 				}
 
 	public void gestionParPeriode(int periode) { 
-		boolean trouve = false; 
+		boolean trouver = false; 
 		Iterator<Atome> iterator = atomes.iterator(); 
 		while (iterator.hasNext()) { 
 			Atome atome = iterator.next(); 
 			if (atome.getPeriode() == periode) { 
 				System.out.println(atome.toString()); 
-				trouve = true; 
+				trouver = true; 
 			} 
 		} 
-		if (trouve == false) System.out.println("Aucun atome n'a été trouvé"); 
+		if (trouver == false) System.out.println("Aucun atome n'a été trouvé"); 
 	}
 
 	public int gestionParPeriode(String nom) {  

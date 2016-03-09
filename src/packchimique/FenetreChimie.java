@@ -293,24 +293,24 @@ public class FenetreChimie extends JFrame implements ActionListener{
 					  ionLabel = new JLabel ("<html><body>Charge ionique: " + tableChimique.atomes.get(i).chargeIonique()+"</body></html>");
 					  coucheElectroniqueLabel = new JLabel ("Couche electronique: " + tableChimique.atomes.get(i).coucheExterne());
 					  	
-					  	nomAtomeLabelS = new JLabel(tableChimique.atomes.get(i).getSymbole());
-						nomAtomeLabelS.setFont(new Font ("Consolas", Font.BOLD, 22));
+					  	nomAtomeLabelS = new JLabel(" "+tableChimique.atomes.get(i).getSymbole()+" ");
+						nomAtomeLabelS.setFont(new Font ("Consolas", Font.BOLD, 20));
 						nomAtomeLabelS.setForeground(Color.blue);
 						
-						nomAtomeLabelZ= new JLabel("<html>Z<sup>"+tableChimique.atomes.get(i).getNumAtomiqueZ()+"</sup></html>");
+						nomAtomeLabelZ= new JLabel("<html><sup>Z "+tableChimique.atomes.get(i).getNumAtomiqueZ()+"</sup></html>");
 						nomAtomeLabelZ.setForeground(Color.red);
 						nomAtomeLabelZ.setFont(new Font ("Consolas", Font.BOLD, 15));
 						
-						nomAtomeLabelM= new JLabel("<html>M<sup>"+df2.format(tableChimique.atomes.get(i).getmasseMolaire())+"</sup></html>");
+						nomAtomeLabelM= new JLabel("<html><sup>M "+df2.format(tableChimique.atomes.get(i).getmasseMolaire())+"</sup></html>");
 						nomAtomeLabelM.setForeground(Color.black);
 						nomAtomeLabelM.setFont(new Font ("Consolas", Font.BOLD, 15));
 						// panneauAtome: Nom d'atome Selectionner
 						panneauAtome=new JPanel();
-						panneauAtome.setLayout(new GridLayout(1,3));
+						panneauAtome.setLayout(new GridLayout(3,1));
 						panneauAtome.setBorder(BorderFactory.createLineBorder(Color.red,3));
 						panneauAtome.setBackground(lightgreen);
-						panneauAtome.setSize(130, 80);
-						panneauAtome.setLocation(350, 100);
+						panneauAtome.setSize(65, 90);
+						panneauAtome.setLocation(400, 100);
 						panneauAtome.add(nomAtomeLabelZ);
 						panneauAtome.add(nomAtomeLabelS);
 						panneauAtome.add(nomAtomeLabelM);
