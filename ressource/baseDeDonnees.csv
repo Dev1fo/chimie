@@ -1,0 +1,118 @@
+Hydrogène;H;Non-métaux;1;1,008;1;1;1
+Hélium;He;Gaz noble;2;4,002602;1;18;0
+Lithium;Li;Alcalin;3;6,94;2;1;1
+Bérylium;Be;Alcalino-terreux;4;9,012182;2;2;2
+Bore;B;Métalloïde;5;10,81;2;13;3
+Carbone;C;Non-métaux;6;12,011;2;14;4
+Azote;N;Non-métaux;7;14,007;2;15;3
+Oxygène;O;Non-métaux;8;15,999;2;16;2
+Fluor;F;Halogène;9;18,9984032;2;17;1
+Néon;Ne;Gaz noble;10;20,1797;2;18;0
+Sodium;Na;Alcalin;11;22,98976928;3;1;1
+Magnésium;Mg;Alcalino-terreux;12;24,305;3;2;2
+Aluminium;Al;Post-transition metal;13;26,9815386;3;13;3
+Silicium;Si;Métalloïde;14;28,085;3;14;4
+Phosphore;P;Non-métaux;15;30,973762;3;15;3
+Souffre;S;Non-métaux;16;32,06;3;16;2
+Chlore;Cl;Halogène;17;35,45;3;17;1
+Argon;Ar;Gaz noble;18;39,948;3;18;0
+Potassium;K;Alcalin;19;39,0983;4;1;1
+Calcium;Ca;Alcalino-terreux;20;40,078;4;2;2
+Scandium;Sc;Métal de transition;21;44,955912;4;3;2
+Titane;Ti;Métal de transition;22;47,867;4;4;2
+Vanadium;V;Métal de transition;23;50,9415;4;5;2
+Chrome;Cr;Métal de transition;24;51,9961;4;6;2
+Manganèse;Mn;Métal de transition;25;54,938045;4;7;2
+Fer;Fe;Métal de transition;26;55,845;4;8;2
+Cobalt;Co;Métal de transition;27;58,933195;4;9;2
+Nickel;Ni;Métal de transition;28;58,6934;4;10;2
+Cuivre;Cu;Métal de transition;29;63,546;4;11;2
+Zinc;Zn;Métal de transition;30;65,38;4;12;2
+Gallium;Ga;Post-transition metal;31;69,723;4;13;3
+Germanium;Ge;Métalloïde;32;72,63;4;14;4
+Arsenic;As;Métalloïde;33;74,9216;4;15;3
+Sélénium;Se;Non-métaux;34;78,96;4;16;2
+Brome;Br;Halogène;35;79,904;4;17;1
+Krypton;Kr;Gaz noble;36;83,798;4;18;0
+Rubdium;Rb;Alcalin;37;85,4678;5;1;1
+Strontium;Sr;Alcalino-terreux;38;87,62;5;2;2
+Yttrium;Y;Métal de transition;39;88,90585;5;3;2
+Zirconium;Zr;Métal de transition;40;91,224;5;4;2
+Niobium;Nb;Métal de transition;41;92,90638;5;5;2
+Molybdène;Mo;Métal de transition;42;95,96;5;6;2
+Technétium;Tc;Métal de transition;43;98;5;7;2
+Ruthénium;Ru;Métal de transition;44;101,07;5;8;2
+Rhodium;Rh;Métal de transition;45;102,9055;5;9;2
+Palladium;Pd;Métal de transition;46;106,42;5;10;2
+Argent;Ag;Métal de transition;47;107,8682;5;11;1
+Cadmium;Cd;Métal de transition;48;112,411;5;12;2
+Indium;In;Post-transition metal;49;114,818;5;13;2
+Étain;Sn;Post-transition metal;50;118,71;5;14;4
+Antimoine;Sb;Métalloïde;51;121,76;5;15;3
+Tellure;Te;Métalloïde;52;127,6;5;16;2
+Iode;In;Halogène;53;126,90447;5;17;1
+Xénon;Xe;Gaz noble;54;131,293;5;18;0
+Césium;Cs;Alcalin;55;132,905452;6;1;1
+Baryum;Ba;Alcalino-terreux;56;137,327;6;2;2
+Lanthane;La;Lanthanide;57;138,90457;6;3;2
+Cérium;Ce;Lanthanide;58;140,116;6;3;2
+Paraséodyme;Pr;Lanthanide;59;140,90766;6;3;2
+Néodyme;Nd;Lanthanide;60;144,242;6;3;2
+Prométhium;Pm;Lanthanide;61;145;6;3;2
+Samarium;Sm;Lanthanide;62;150,36;6;3;2
+Europium;Eu;Lanthanide;63;151,964;6;3;2
+Gadolinium;Gd;Lanthanide;64;157,25;6;3;2
+Terbium;Tb;Lanthanide;65;158,92535;6;3;2
+Dysprosium;Dy;Lanthanide;66;162,5;6;3;2
+Holmium;Ho;Lanthanide;67;164,93033;6;3;2
+Erbium;Er;Lanthanide;68;167,259;6;3;2
+Thulium;Tm;Lanthanide;69;168,93422;6;3;2
+Ytterbium;Yb;Lanthanide;70;173,054;6;3;2
+Lutécium;Lu;Lanthanide;71;174,9668;6;3;2
+Hafnium;Hf;Métal de transition;72;178,49;6;4;2
+Tantale;Ta;Métal de transition;73;180,94788;6;5;2
+Tungstène;W;Métal de transition;74;183,84;6;6;2
+Rhénium;Re;Métal de transition;75;186,207;6;7;2
+Osmium;Os;Métal de transition;76;190,23;6;8;2
+Iridium;Ir;Métal de transition;77;192,217;6;9;2
+Platine;Pt;Métal de transition;78;195,084;6;10;2
+Or;Au;Métal de transition;79;196,966569;6;11;2
+Mercure;Hg;Métal de transition;80;200,59;6;12;2
+Thallium;Tl;Post-transition metal;81;204,38;6;13;3
+Plomb;Pb;Post-transition metal;82;207,2;6;14;4
+Bismuth;Bi;Post-transition metal;83;208,9804;6;15;3
+Polonium;Po;Métalloïde;84;209;6;16;2
+Astate;At;Halogène;85;210;6;17;1
+Radon;Rn;Gaz noble;86;222;6;18;0
+Francium;Fr;Alcalin;87;223;7;1;1
+Radium;Ra;Alcalino-terreux;88;226;7;2;2
+Actinium;Ac;Actinide;89;227;7;3;2
+Thorium;Th;Actinide;90;232,0377;7;3;2
+Protactinium;Pa;Actinide;91;231,03588;7;3;2
+Uranium;U;Actinide;92;238,02891;7;3;2
+Neptunium;Np;Actinide;93;237;7;3;2
+Plutonium;Pu;Actinide;94;244;7;3;2
+Américium;Am;Actinide;95;243;7;3;2
+Curium;Cm;Actinide;96;247;7;3;2
+Berkélium;Bk;Actinide;97;247;7;3;2
+Californium;Cf;Actinide;98;251;7;3;2
+Eisteinium;Es;Actinide;99;252;7;3;2
+Fermium;Fm;Actinide;100;257;7;3;2
+Mendélévium;Md;Actinide;101;258;7;3;2
+Nobélium;No;Actinide;102;259;7;3;2
+Lawrencium;Lr;Actinide;103;262;7;3;2
+Rutherfordium;Rf;Métal de transition;104;267;7;4;2
+Dubnium;Db;Métal de transition;105;268;7;5;2
+Seaborgium;Sg;Métal de transition;106;271;7;6;2
+Bohrium;Bh;Métal de transition;107;272;7;7;2
+Hassium;Hs;Métal de transition;108;270;7;8;2
+Meitnérium;Mt;Métal de transition;109;276;7;9;2
+Damstadtium;Ds;Métal de transition;110;281;7;10;2
+Roentgenium;Rg;Métal de transition;111;280;7;11;2
+Copermicium;Cn;Métal de transition;112;285;7;12;2
+Unitrim;Uut;Post-transition metal;113;284;7;13;3
+Flerovium;Fl;Post-transition metal;114;289;7;14;4
+Ununpentium;Uup;Post-transition metal;115;288;7;15;3
+Livermorium;Lv;Post-transition metal;116;293;7;16;2
+Ununseptium;Uus;Halogène;117;294;7;17;1
+Ununoctium;Uuo;Gaz noble;118;294;7;18;0
