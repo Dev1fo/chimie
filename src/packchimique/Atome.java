@@ -88,43 +88,6 @@ public class Atome {
 		}
 	}
 
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Atome other = (Atome) obj;
-		if (col != other.col)
-			return false;
-		if (famille == null) {
-			if (other.famille != null)
-				return false;
-		} else if (!famille.equals(other.famille))
-			return false;
-		if (Double.doubleToLongBits(masseMolaire) != Double
-				.doubleToLongBits(other.masseMolaire))
-			return false;
-		if (nom == null) {
-			if (other.nom != null)
-				return false;
-		} else if (!nom.equals(other.nom))
-			return false;
-		if (numAtomiqueZ != other.numAtomiqueZ)
-			return false;
-		if (periode != other.periode)
-			return false;
-		if (symbole == null) {
-			if (other.symbole != null)
-				return false;
-		} else if (!symbole.equals(other.symbole))
-			return false;
-		return true;
-	}
-
 	@Override
 	public String toString() {
 		return "Nom Atome:[" + nom + "]|Symbole chimique:[" + symbole + "]|Famille:["

@@ -357,9 +357,9 @@ public class FenetreChimie extends JFrame implements ActionListener{
 	
 
 	public static void main(String[] args) throws ParseException, AtomeDejaAjouterException,AtomeInexistantException {
-		FenetreChimie GestionDonne = new FenetreChimie();
-		GestionDonne.setResizable(false);
-		GestionDonne.setVisible(true);
+		FenetreChimie appliFenetre = new FenetreChimie();
+		appliFenetre.setResizable(false);
+		appliFenetre.setVisible(true);
 		
 
 	}
