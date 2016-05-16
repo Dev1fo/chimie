@@ -87,6 +87,27 @@ public class Atome {
 			default:return "[K L M N O P Q]";
 		}
 	}
+	
+	public int[] calculeCouche(){
+		int[] couches = new int [periode];
+		int electronsrestants = numAtomiqueZ;
+		int nombreAcceptes;
+		// Initialisation du tableau
+		for(int i = 0; i < periode; i++) couches[i] = 0;
+			for(int i = 0; i < periode; i++) {
+				if(electronsrestants > 0){
+					nombreAcceptes = 2*(int) Math.pow(i+1, 2);
+					electronsrestants = electronsrestants - nombreAcceptes;
+					if(electronsrestants < 0) {
+						couches[i] = nombreAcceptes + electronsrestants;
+					}
+					else {
+						couches[i] = nombreAcceptes;
+					}
+				}
+			}
+		return couches;
+	}
 
 	@Override
 	public String toString() {

@@ -20,11 +20,6 @@ import packchimique.GestionDonne;
 			
 			System.out.println("\n### Le nombre de Neutrons d'un atome:###\n");
 			tableElementChimique.calculNeutron("Fe");
-			
-			
-			 
 		
-			
-
 		}
 	}

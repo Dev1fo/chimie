@@ -50,6 +50,7 @@ public class FenetreChimie extends JFrame implements ActionListener{
 	private JLabel familleLabel;
 	private JLabel ionLabel = new JLabel();
 	private JLabel coucheElectroniqueLabel = new JLabel();
+	private JPanel panel_Couche = new JPanel(); // Affichage par couche de l'atome
 	private JLabel masseAtomeLabel = new JLabel();
 	// Ajout des boutons
 	private JButton atomeBouton; // Bouton correspondant à l'atome
@@ -65,9 +66,12 @@ public class FenetreChimie extends JFrame implements ActionListener{
 		this.setTitle("Tableau Périodique De Mendeleiev");
 		this.setResizable(true);
 		this.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
-		this.setSize(1400,900);
-		// Mode plein ecran
-		//this.getToolkit().getScreenSize()
+		
+		this.setSize(1300,900);
+		this.setLocationByPlatform(true);
+	     this.setVisible(true);
+		
+		
 		// panneauTitre: le titre
 		titreLabel = new JLabel("Periodic Table of Elements");
 		titreLabel.setFont(new Font ("Consolas", Font.BOLD, 40));
@@ -79,14 +83,14 @@ public class FenetreChimie extends JFrame implements ActionListener{
 		// panneauTablePeriodique: Panneau fenetre
 		panneauTablePeriodique.setLayout(new GridLayout(7,18)); 
 		panneauTablePeriodique.setLayout(null);
-		panneauTablePeriodique.setSize(1400,900);
+		panneauTablePeriodique.setSize(1300,900);
 		panneauTablePeriodique.setBackground(Color.black);
 		
 		//panneauLegende: la légende, GridLayout précise le nombre de lignes et colonnes
 		panneauLegende.setLayout(new GridLayout(10,2));
 		panneauLegende.setLayout(null);
 		panneauLegende.setSize(210,200);
-		panneauLegende.setLocation(1150,500);
+		panneauLegende.setLocation(2,450);
 		panneauLegende.setBackground(Color.black);
 	
 		panneauComplet.setLayout(new GridLayout(4,1));
@@ -278,7 +282,7 @@ public class FenetreChimie extends JFrame implements ActionListener{
 				  	DecimalFormat df2 = new DecimalFormat("0");
 				  	  
 					  fenetre.setTitle("Illustration: " + tableChimique.atomes.get(i).getNom());
-					  titre2Label = new JLabel("<html><body><u>Information Générale de l'atome</u></body></html>",JLabel.CENTER);
+					  titre2Label = new JLabel("<html><body><u>Information Atome</u></body></html>",JLabel.CENTER);
 					  titre2Label.setFont (new Font ("Consolas", Font.BOLD, 15));
 					  titre2Label.setForeground(Color.red);
 					  nomLabel = new JLabel ("Nom: "+tableChimique.atomes.get(i).getNom());
@@ -315,6 +319,20 @@ public class FenetreChimie extends JFrame implements ActionListener{
 						panneauAtome.add(nomAtomeLabelS);
 						panneauAtome.add(nomAtomeLabelM);
 						
+						//Fenetre pour afficher les couches externes
+					    JFrame fenetre1 = new JFrame("Représentation atome");
+					    fenetre1.setResizable(false);
+					    fenetre1.setLocation(1080, 485);
+					    fenetre1.setSize (250,250);
+					    
+						
+					    
+					    panel_Couche = new Pauli(tableChimique.atomes.get(i));
+					    panel_Couche.setSize (250,250);
+					    //Termine le processus lorsqu'on clique sur la croix rouge
+					  	fenetre1.add(panel_Couche);
+					    panel_Couche.setVisible(true);
+					    fenetre1.setVisible(true);
 				
 						
 			  }
@@ -348,7 +366,7 @@ public class FenetreChimie extends JFrame implements ActionListener{
 		
 		fenetre.setContentPane(panneauFenetreIllustration);
 		fenetre.setResizable(false);
-		fenetre.setSize (280,400);
+		fenetre.setSize (250,400);
 		fenetre.setLocation (1080, 80);
 		fenetre.setVisible(true);
 	
@@ -358,6 +376,8 @@ public class FenetreChimie extends JFrame implements ActionListener{
 
 	public static void main(String[] args) throws ParseException, AtomeDejaAjouterException,AtomeInexistantException {
 		FenetreChimie appliFenetre = new FenetreChimie();
+		appliFenetre.setLocation(25,20);
+		appliFenetre.setSize(1300,750);
 		appliFenetre.setResizable(false);
 		appliFenetre.setVisible(true);
 		
