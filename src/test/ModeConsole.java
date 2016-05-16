@@ -1,8 +1,11 @@
-package packchimique;
+package test;
 	import java.text.ParseException;
+	import packchimique.AtomeDejaAjouterException;
+	import packchimique.AtomeInexistantException;
+	import packchimique.GestionDonne;
 
-	public class  ModeConsole {
-
+	public class  ModeConsole {		
+		
 
 		public static void main(String[] args) throws AtomeDejaAjouterException,AtomeInexistantException, ParseException {
 			
